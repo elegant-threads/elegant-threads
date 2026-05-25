@@ -1,1 +1,513 @@
-<p>Testing</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elegant Threads | Boutique Tailoring & Embroidery</title>
+  <meta name="description" content="Elegant Threads - Premium blouse stitching, embroidery, pico falls and traditional tailoring services in Hubli." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #5f122d;
+      --secondary: #a46b3b;
+      --light: #fff8f1;
+      --text: #452330;
+      --white: #ffffff;
+      --shadow: 0 20px 60px rgba(0,0,0,0.12);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .navbar {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(70, 15, 33, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .brand {
+      color: var(--white);
+      font-family: 'Cinzel', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.92);
+      font-size: 0.96rem;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #f8d49b;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: center;
+      padding: 130px 8% 80px;
+      gap: 70px;
+      background:
+        linear-gradient(rgba(62, 9, 24, 0.9), rgba(85, 19, 38, 0.88)),
+        linear-gradient(135deg, #551327, #7c2843, #b48458);
+      color: white;
+    }
+
+    .hero-subtitle {
+      color: #f7d5a1;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.92rem;
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 4.5rem;
+      line-height: 1.08;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      max-width: 620px;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 34px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #d8a05c, #9d6738);
+      color: white;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image::before {
+      content: "";
+      position: absolute;
+      inset: -20px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 30px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 26px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+      position: relative;
+      z-index: 2;
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #7b6570;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 35px 28px;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      transition: 0.35s ease;
+      border: 1px solid rgba(164,107,59,0.08);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #6f1935, #b58454);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .about {
+      background: linear-gradient(135deg, #fffaf5, #f8eee6);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: white;
+      padding: 40px;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-box h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--primary);
+      margin-bottom: 18px;
+      font-size: 2rem;
+    }
+
+    .contact-section {
+      background: linear-gradient(135deg, #5f122d, #7b2742);
+      color: white;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .contact-info h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 28px;
+      padding: 35px;
+    }
+
+    .contact-item {
+      margin-bottom: 22px;
+    }
+
+    .contact-item h4 {
+      color: #f4c98d;
+      margin-bottom: 6px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact-item p,
+    .contact-item a {
+      color: white;
+      font-size: 1.05rem;
+    }
+
+    .footer {
+      text-align: center;
+      background: #3e0c1d;
+      color: rgba(255,255,255,0.75);
+      padding: 24px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .about-grid,
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .navbar {
+        padding: 16px 5%;
+      }
+
+      section {
+        padding: 70px 5%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .section-title h2,
+      .contact-info h2 {
+        font-size: 2rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="brand">Elegant Threads</div>
+
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <div class="hero-subtitle">Premium Tailoring & Embroidery Boutique</div>
+
+      <h1>Crafting Every Stitch With Elegance</h1>
+
+      <p>
+        Elegant Threads offers premium embroidery work, blouse stitching,
+        pico falls, and traditional tailoring services with exceptional
+        craftsmanship and attention to detail.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="https://wa.me/919606100498" target="_blank">
+          WhatsApp Us
+        </a>
+
+        <a class="btn btn-outline" href="mailto:contact@elegant-threads.com">
+          Contact by Email
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="Card_English.png" alt="Elegant Threads Boutique Card">
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>
+        We provide customized stitching and embroidery solutions with elegant finishing and professional craftsmanship.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">✿</div>
+        <h3>Embroidery Work</h3>
+        <p>
+          Elegant embroidery designs crafted with precision and premium finishing for traditional and modern styles.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">✂</div>
+        <h3>Blouse Stitching</h3>
+        <p>
+          Customized blouse stitching with perfect fitting, comfort, and designer styling.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🧵</div>
+        <h3>Pico & Falls</h3>
+        <p>
+          Professional pico and falls services for sarees with neat finishing and quality workmanship.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">❋</div>
+        <h3>Traditional Finishing</h3>
+        <p>
+          Elegant traditional tailoring and finishing work tailored to your personal style.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-box">
+        <h3>About Elegant Threads</h3>
+
+        <p>
+          Elegant Threads is a boutique tailoring and embroidery studio dedicated to quality craftsmanship, elegant designs, and customer satisfaction.
+        </p>
+
+        <br>
+
+        <p>
+          We specialize in premium blouse stitching, embroidery work, pico falls, and traditional tailoring services with attention to every detail.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>Why Choose Us</h3>
+
+        <p>✔ Premium quality stitching and finishing</p>
+        <p>✔ Customized designs and tailoring</p>
+        <p>✔ Professional embroidery work</p>
+        <p>✔ Elegant traditional craftsmanship</p>
+        <p>✔ Personalized customer service</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h2>Get In Touch</h2>
+
+        <p>
+          Contact Elegant Threads for blouse stitching, embroidery work, pico falls, and traditional tailoring services.
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-item">
+          <h4>Name</h4>
+          <p>Netravati</p>
+        </div>
+
+        <div class="contact-item">
+          <h4>Phone Number</h4>
+          <a href="tel:+919606100498">+91 9606100498</a>
+        </div>
+
+        <div class="contact-item">
+          <h4>Email Address</h4>
+          <a href="mailto:contact@elegant-threads.com">contact@elegant-threads.com</a>
+        </div>
+
+        <div class="contact-item">
+          <h4>Business Address</h4>
+          <p>
+            Laxmi Nagar 4th Cross,<br>
+            Gokul Road,<br>
+            Hubli - 580030
+          </p>
+        </div>
+
+        <a class="btn btn-primary" href="https://wa.me/919606100498" target="_blank">
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © 2026 Elegant Threads • Boutique Tailoring & Embroidery Services • Hubli
+  </footer>
+
+</body>
+</html>
