@@ -80,12 +80,13 @@
     }
 
     .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      align-items: center;
-      padding: 130px 8% 80px;
-      gap: 70px;
+      min-height: 72vh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 110px 8% 80px;
+      gap: 28px;
       background:
         linear-gradient(rgba(62, 9, 24, 0.9), rgba(85, 19, 38, 0.88)),
         linear-gradient(135deg, #551327, #7c2843, #b48458);
@@ -103,9 +104,9 @@
 
     .hero h1 {
       font-family: 'Cinzel', serif;
-      font-size: 4.5rem;
-      line-height: 1.08;
-      margin-bottom: 22px;
+      font-size: 3.4rem;
+      line-height: 1.06;
+      margin-bottom: 18px;
     }
 
     .hero p {
@@ -147,25 +148,10 @@
       transform: translateY(-3px);
     }
 
-    .hero-image {
-      position: relative;
-    }
-
-    .hero-image::before {
-      content: "";
-      position: absolute;
-      inset: -20px;
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 30px;
-    }
-
-    .hero-image img {
-      width: 100%;
-      border-radius: 26px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
-      position: relative;
-      z-index: 2;
-    }
+    /* Hero visual removed — single-column hero layout in use */
+    .hero-content { max-width: 860px; }
+    .hero-features{display:flex; gap:12px; margin-top:20px}
+    .feature{background:rgba(255,255,255,0.08); padding:10px 14px; border-radius:12px; font-weight:600; color:rgba(255,255,255,0.95)}
 
     section {
       padding: 90px 8%;
@@ -365,7 +351,7 @@
   </nav>
 
   <section class="hero">
-    <div>
+    <div class="hero-content">
       <div class="hero-subtitle">Premium Tailoring & Embroidery Boutique</div>
 
       <h1>Crafting Every Stitch With Elegance</h1>
@@ -385,10 +371,6 @@
           Contact by Email
         </a>
       </div>
-    </div>
-
-    <div class="hero-image">
-      <img src="Card_English.png" alt="Elegant Threads Boutique Card">
     </div>
   </section>
 
